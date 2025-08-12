@@ -1,0 +1,434 @@
+/* ===== PREMIUM CONTACT PAGE STYLES ===== */
+
+/* Contact Section */
+.contact-section {
+    background: linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%);
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+    /* Ensures Lottie doesn't cause horizontal scroll if it extends too far */
+}
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 123, 255, 0.2), transparent);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    /* Establishes stacking context for content */
+    z-index: 1;
+    /* Ensures content is above Lottie */
+}
+
+/* Left Side - Contact Information (MODIFIED) */
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* Space between the text block and Lottie */
+    align-items: center;
+    /* Center content horizontally within the column */
+    text-align: center;
+    /* Center the text itself */
+    position: relative;
+    /* Keep for potential animations or if other absolute elements are nested */
+    z-index: 1;
+    /* Ensure content is above any background Lottie if that were the case */
+}
+
+/* Group for Header Text - make sure this div exists in HTML, which it does based on your provided HTML */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center subtitle, title, description */
+    text-align: center;
+    /* Center the text inside this block */
+    max-width: 600px;
+    /* Optional: limit width for better readability */
+}
+
+.contact-subtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #007bff;
+    /* A professional blue */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.contact-title {
+    font-size: clamp(32px, 5vw, 48px);
+    /* Adjusted to use clamp for better responsiveness */
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin: 0;
+    position: relative;
+}
+
+.contact-title::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    /* Center the underline */
+    transform: translateX(-50%);
+    /* Adjust for perfect centering */
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 2px;
+}
+
+.contact-description {
+    font-size: clamp(15px, 2vw, 18px);
+    /* Adjusted to use clamp for better responsiveness */
+    color: #555;
+    line-height: 1.6;
+    margin-top: 20px;
+    /* Adjusted for cleaner spacing */
+}
+
+/* Single Lottie Animation (MODIFIED) */
+#mainContactLottie {
+    position: relative;
+    /* Make it flow naturally within .contact-left */
+    width: clamp(250px, 40vw, 450px);
+    /* Adjusted to use clamp for better responsiveness */
+    height: clamp(250px, 40vw, 450px);
+    /* Adjusted to use clamp for better responsiveness */
+    opacity: 1;
+    /* Keep full opacity if it's a main visual element */
+    pointer-events: none;
+    /* Prevents Lottie from blocking mouse events behind it */
+    margin-top: 20px;
+    /* Add some space between text and Lottie */
+    /* REMOVED: top, left, transform properties that caused absolute positioning */
+}
+
+/* Right Side - Contact Form */
+.contact-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* Ensure form content is above the Lottie animation */
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #adb5bd;
+    font-weight: 400;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 18px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.4);
+    background: linear-gradient(135deg, #0056b3, #004494);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Removed .submit-btn.loading, .btn-text, .btn-loader, .spinner styles */
+
+/* Removed Message Overlay styles */
+/* .message-overlay, .message-content, .message-icon, .message-title, .message-text, .message-close styles removed */
+
+/* Active Contact Button in Navbar */
+.contact-btn.active {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.contact-btn.active:hover {
+    background: linear-gradient(135deg, #20c997, #17a2b8);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+/* Animations */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-left.animate-on-scroll {
+    transition-delay: 0.2s;
+}
+
+.contact-right.animate-on-scroll {
+    transition-delay: 0.4s;
+}
+
+/* Form Validation Styles */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* New error message style */
+.error-message {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+    /* Ensures it takes its own line */
+    text-align: left;
+    padding-left: 5px;
+    /* Small indent for readability */
+}
+
+/* Phone Input Group Styles */
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+    /* Space between dropdown and input */
+}
+
+.phone-input-group select {
+    flex-shrink: 0;
+    /* Prevent select from shrinking */
+    width: 120px;
+    /* Fixed width for country code dropdown */
+    padding: 15px 10px;
+    /* Adjust padding for consistency */
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: inherit;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-sizing: border-box;
+    appearance: none;
+    /* Remove default arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+.phone-input-group select:focus {
+    outline: none;
+    border-color: #007bff;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.phone-input-group input[type="tel"] {
+    flex-grow: 1;
+    /* Allow phone number input to take remaining space */
+}
+
+/* Error styling for the new elements */
+.phone-input-group select.error,
+.phone-input-group input[type="tel"].error {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        gap: 60px;
+        padding: 0 30px;
+    }
+
+    /* Removed fixed font-size for contact-title as it's now handled by clamp */
+    /* Removed fixed width/height for mainContactLottie as it's now handled by clamp */
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        /* Stack columns vertically */
+        gap: 50px;
+        padding: 0 20px;
+    }
+
+    .contact-section {
+        padding: 100px 0 60px;
+    }
+
+    /* Removed fixed font-size for contact-title as it's now handled by clamp */
+    .contact-title {
+        text-align: center;
+    }
+
+    .contact-title::after {
+        /* Ensure underline is centered on small screens */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-left,
+    .contact-right {
+        /* Ensure both columns take full width when stacked */
+        max-width: 500px;
+        /* Limit overall width for better readability */
+        margin: 0 auto;
+        /* Center the stacked columns */
+        padding: 0;
+        /* Remove padding if added for two-column layout */
+    }
+
+    /* Keep the order as it is by default in HTML for stacked layout */
+    .contact-left {
+        /* The text and Lottie column */
+        order: 1;
+        /* Appears first */
+    }
+
+    .contact-right {
+        /* The form column */
+        order: 2;
+        /* Appears second */
+    }
+
+    .contact-form {
+        padding: 30px;
+    }
+
+    /* Removed fixed width/height for mainContactLottie as it's now handled by clamp */
+    #mainContactLottie {
+        margin-top: 20px;
+        /* Space below text content */
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Removed fixed font-size for contact-title as it's now handled by clamp */
+    .contact-form {
+        padding: 25px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .submit-btn {
+        padding: 15px 28px;
+        font-size: 15px;
+    }
+
+    /* Removed message-content styles for smaller screens */
+
+    /* Removed fixed width/height for mainContactLottie as it's now handled by clamp */
+}

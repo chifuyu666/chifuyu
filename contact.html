@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Premium Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+    <!-- Ensure Lottie Player is loaded optimally -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js" defer></script>
+</head>
+
+<body>
+    <!-- ===== PREMIUM NAVBAR SECTION ===== -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <!-- Custom Logo Placeholder -->
+            <div class="logo-placeholder">
+                <img src="./img/logo.svg" alt="logo" class="logo-image" height="70px" />
+            </div>
+            <!-- Navigation Menu -->
+            <div class="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#skills" class="nav-link">Skills</a>
+                <a href="index.html#works" class="nav-link">My works</a>
+            </div>
+            <!-- Enhanced Contact Button -->
+            <button class="contact-btn active" id="contactBtn">Contact Me</button>
+
+            <!-- Burger Menu Icon for Mobile -->
+            <div class="burger-menu-icon" id="burgerMenuIcon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-header">
+            <div class="logo-placeholder">
+                <img src="./img/logo.svg" alt="logo" class="logo-image" height="70px" />
+            </div>
+            <div class="mobile-menu-close-icon" id="mobileMenuCloseIcon">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+            </div>
+        </div>
+        <div class="mobile-nav-menu">
+            <a href="index.html#home" class="mobile-nav-link">Home</a>
+            <a href="index.html#about" class="mobile-nav-link">About</a>
+            <a href="index.html#skills" class="mobile-nav-link">Skills</a>
+            <a href="index.html#works" class="mobile-nav-link">My works</a>
+            <!-- Mobile Contact Button -->
+            <button class="contact-btn mobile-contact-btn" id="mobileContactBtn">Contact Me</button>
+        </div>
+    </div>
+
+    <!-- ===== PREMIUM CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <!-- Left Side - Contact Information -->
+            <div class="contact-left animate-on-scroll">
+                <div class="contact-info">
+                    <!-- Header Text -->
+                    <p class="contact-subtitle">WE'RE HERE TO HELP YOU</p>
+                    <h1 class="contact-title">Discuss Your<br>Project Needs</h1>
+                    <p class="contact-description">
+                        Are you looking for top-quality development solutions tailored to your needs? Reach out to us.
+                    </p>
+                </div>
+                <!-- Single Lottie Animation (positioned independently) -->
+                <lottie-player id="mainContactLottie" src="./img/contact us.json" background="transparent" speed="1"
+                    loop autoplay renderer="svg" loading="eager">
+                </lottie-player>
+            </div>
+
+            <!-- Right Side - Contact Form -->
+            <div class="contact-right animate-on-scroll">
+                <form class="contact-form" action="https://formspree.io/f/myzpdzyy" method="POST">
+                    <!-- Full Name Field -->
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
+                        <span class="error-message" id="fullNameError"></span>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <!-- WhatsApp Number Field -->
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp Number</label>
+                        <div class="phone-input-group">
+                            <select id="countryCode" name="countryCode" required>
+                                <option value="">Code</option>
+                                <option value="+213" selected>+213 (Algeria)</option>
+                                <option value="+1">+1 (USA/Canada)</option>
+                                <option value="+44">+44 (UK)</option>
+                                <option value="+33">+33 (France)</option>
+                                <option value="+49">+49 (Germany)</option>
+                                <!-- Add more countries as needed -->
+                            </select>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="e.g., 5xx xxx xxx"
+                                required>
+                        </div>
+                        <span class="error-message" id="phoneNumberError"></span>
+                    </div>
+
+                    <!-- Subject Field -->
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Subject" required>
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5"
+                            required></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <!-- Removed btn-loader and spinner as JS is not handling submission -->
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Removed message-overlay as JS is not handling submission messages -->
+
+    <script src="script.js"></script>
+    <script src="contact-script.js"></script>
+</body>
+
+</html>

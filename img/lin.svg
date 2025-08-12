@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff6b00;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Page-1">
+    <g id="Dribbble-Light-Preview">
+      <g id="icons">
+        <path id="linkedin-_161_" data-name="linkedin-[#161]" class="cls-1" d="M20,20h-4v-7c0-1.92-.85-2.99-2.37-2.99-1.65,0-2.63,1.12-2.63,2.99v7H7V7h4v1.46s1.26-2.2,4.08-2.2,4.92,1.73,4.92,5.3v8.44h0ZM2.44,4.92C1.09,4.92,0,3.82,0,2.46S1.09,0,2.44,0s2.44,1.1,2.44,2.46c0,1.36-1.09,2.46-2.44,2.46h0ZM0,20H5V7H0v13Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

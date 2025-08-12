@@ -1,0 +1,57 @@
+[
+    {
+        "title": "NinesShop E-Commerce Website",
+        "description": "A dynamic e-commerce platform tailored for beauty and cosmetic products. Designed for a client studying in Poland, the site offers a sleek UI reminiscent of SHEIN but focused entirely on makeup and beauty essentials.",
+        "image": "project /beaty.json"
+    },
+    {
+        "title": "Benzerjeb School App",
+        "description": "A modern mobile app for a private tutoring school, allowing students to track weekly lessons, manage notes, reminders, and get real-time notifications. The UI is complete and currently under development for deployment.",
+        "image": "project /benzerjeb shcool.json"
+    },
+    {
+        "title": "Foodi - Food Delivery App",
+        "description": "An intuitive food delivery app showcasing modern UI with sections for promotions, offers, and meal browsing. This app was a UI concept project focused on user-friendly design and layout.",
+        "image": "project /food.json"
+    },
+    {
+        "title": "Graduation Project - Smart Energy App",
+        "description": "An IoT-connected mobile app for managing a solar-powered system. It features real-time control, AI assistant integration for data analysis, and full monitoring capabilities. Designed as part of an academic graduation project.",
+        "image": "project /green flow.json"
+    },
+    {
+        "title": "Fruit Hub",
+        "description": "A fresh and colorful app for ordering fruits and vegetables. Fully designed with a modern touch, ready for development and integration with delivery systems.",
+        "image": "project /fruit.json"
+    },
+    {
+        "title": "Health Meals Website",
+        "description": "A clean, minimal design for a website that offers healthy food orders. Focused on promoting wellness through curated meal options. Currently a UI project.",
+        "image": "project /health  web sit.json"
+    },
+    {
+        "title": "Health Assist App",
+        "description": "A mobile assistant app for patients with chronic illnesses. Features include doctor communication, food scanning, recipe suggestions, medication reminders, and expert doctor listings by region. UI design completed.",
+        "image": "project /health.json"
+    },
+    {
+        "title": "Joe Identity Designs",
+        "description": "A branding and identity design project created for a Jordanian barbershop chain. Includes professional logos and full branding elements with a stylish, masculine aesthetic.",
+        "image": "project /joe graphic design.json"
+    },
+    {
+        "title": "Joe Barbershop Website",
+        "description": "A web design concept for a premium barbershop, showcasing the brand, services offered (standard & VIP), and contact booking. A sleek and responsive UI project.",
+        "image": "project /joe-websit.json"
+    },
+    {
+        "title": "Sweet Breakfast App",
+        "description": "A delightful mobile app concept to help users explore and schedule sweet breakfast recipes. Includes favorites, calendar meal planning, and preparation steps. UI-focused project.",
+        "image": "project /sweet.json"
+    },
+    {
+        "title": "Hawess - Tlemcen Tourist Guide App",
+        "description": "An ongoing mobile app project that highlights the hidden and popular tourist spots, foods, and traditional clothing of Tlemcen. A cultural guide in your pocket.",
+        "image": "project /tlemcen.json"
+    }
+]
