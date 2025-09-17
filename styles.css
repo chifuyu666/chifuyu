@@ -2067,3 +2067,34 @@ lottie-player.project-media {
         right: 5px;
     }
 }
+
+/* Added styles for PDF download icon */
+.project-info-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-info-icon:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.project-card {
+    position: relative;
+}

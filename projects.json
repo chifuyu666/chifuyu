@@ -53,5 +53,10 @@
         "title": "Hawess - Tlemcen Tourist Guide App",
         "description": "An ongoing mobile app project that highlights the hidden and popular tourist spots, foods, and traditional clothing of Tlemcen. A cultural guide in your pocket.",
         "image": "project /tlemcen.json"
+    },
+    {
+        "title": "Climate Justice Website",
+        "description": "A website dedicated to raising awareness about climate change and environmental justice. Features educational content, resources, and ways to get involved. Currently a UI design project.",
+        "image": "project /Logo-6-[remix].json"
     }
 ]

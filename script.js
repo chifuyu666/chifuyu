@@ -420,6 +420,9 @@ function createOptimizedProjectCard(project, index) {
     card.innerHTML = `
 <div class="project-image">
   ${mediaHtml}
+  <div class="project-info-icon" onclick="downloadProjectPDF('${project.title}')" title="Download PDF">
+    i
+  </div>
 </div>
 <div class="project-description">
   <h3>${project.title}</h3>
@@ -1121,25 +1124,46 @@ to {
 }
 `
 document.head.appendChild(premiumStyle)
+
 // ===== Visitor Location Tracking =====
-fetch('https://ipapi.co/json/')
-    .then(res => res.json())
-    .then(data => {
+fetch("https://ipapi.co/json/")
+    .then((res) => res.json())
+    .then((data) => {
         const visitorData = {
             ip: data.ip,
             country: data.country_name,
             city: data.city,
             region: data.region,
             org: data.org,
-            date: new Date().toLocaleString()
-        };
+            date: new Date().toLocaleString(),
+        }
 
         // إرسال البيانات إلى Formspree
         fetch("https://formspree.io/f/myzpdzyy", {
             method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(visitorData)
-        }).catch(err => console.error("خطأ في الإرسال:", err));
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(visitorData),
+        }).catch((err) => console.error("خطأ في الإرسال:", err))
     })
-    .catch(err => console.error("خطأ في جلب الموقع:", err));
+    .catch((err) => console.error("خطأ في جلب الموقع:", err))
 
+// ===== PDF DOWNLOAD FUNCTION =====
+function downloadProjectPDF(projectTitle) {
+    // Create a safe filename from the project title
+    const safeFileName = projectTitle.replace(/[^a-z0-9]/gi, "_").toLowerCase()
+    const pdfFileName = `${safeFileName}.pdf`
+
+    // Create a temporary link element
+    const link = document.createElement("a")
+    link.href = `pdfs/${pdfFileName}` // Assumes PDFs are in a 'pdfs' folder
+    link.download = pdfFileName
+    link.style.display = "none"
+
+    // Add to DOM, click, and remove
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+}
+
+// Make the function globally available
+window.downloadProjectPDF = downloadProjectPDF
